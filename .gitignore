@@ -27,6 +27,7 @@
 *.sqlite
 *.properties
 Project_two/src/main/resources/*
+Project_two/target/*
 
 # OS generated files #
 ######################
