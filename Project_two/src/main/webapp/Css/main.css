@@ -1,3 +1,68 @@
-*{
-background-color:blue;
+a {
+  text-decoration: underline;
+  color: black;
+}
+body {
+  margin: 0px;
+}
+html {
+  padding: 0px;
+  margin: 0px;
+  height: 0px;
+}
+#header {
+  margin: 0px;
+  background-color: beige;
+  width: 100%;
+  padding-top: 20px;
+  min-height: 50px;
+  font-size: 175%;
+  text-align: center;
+  font-style: italic;
+}
+#links {
+  width: 100%;
+  background-color: antiquewhite;
+  border: 1px solid black;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+  height: 50px;
+  font-size: 100%;
+}
+#logintable {
+  background-color: bisque;
+  padding: 10px;
+  min-width: 200px;
+  width: 40%;
+  border-radius: 15px;
+  margin-left: 25%;
+  margin-top: 30px;
+  border: 1px solid black;
+}
+#logintable div p {
+  height: 40px;
+  display: block;
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+  margin-left: 0px;
+}
+#logintable div {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+#logintable div input {
+  width: 65%;
+}
+#loginbutton {
+  width: 25%;
+  margin: 0px;
+  text-align: center;
+  display: inline-block;
+  height: 30px;
+}
+#loginbutton input {
+  width: 30%;
 }
