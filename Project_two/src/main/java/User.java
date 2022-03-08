@@ -1,18 +1,21 @@
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-@Entity
+
+// @Entity(name="tablename")
+@Entity(name="user")
 public class User {
+    // @ID sets primary key
     @Id
     private int id;
+    @Column
     private String username;
     private String email;
     private String password;
     private boolean isManager;
 
-    public User(){
-    }
-
+    // insert data through the constructor
     public User(int id, String username, String email, String password, boolean isManager) {
         this.id = id;
         this.username = username;
