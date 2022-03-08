@@ -20,7 +20,8 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        request.getRequestDispatcher("navbar.html").include(request,response);
+        // When the input<BUTTON> is pressed it will send us to the
+        request.getRequestDispatcher("login.html").include(request,response);
 
         System.out.println( "Project started..." );
 
@@ -39,12 +40,20 @@ public class LoginServlet extends HttpServlet {
         //begin transaction
         Transaction t = hybSess.beginTransaction();
 
+        // Create a query
         Query query = hybSess.createQuery("from users", User.class);
 
+        // Get the "username" and "password" input fields from login.html
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         if(username.equals("admin") && password.equals("123")) {
+            // debug purposes
+            System.out.println("Password Accepted!");
+            // used to go to the next page
+            RequestDispatcher requestdispatcher = request.getRequestDispatcher("/login.html");
+            requestdispatcher.forward(request,response);
+
             out.println("You are successfully logged in.");
             out.println("<br>Welcome " + username);
 
