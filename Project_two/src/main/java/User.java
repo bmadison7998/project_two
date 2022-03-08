@@ -1,4 +1,3 @@
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -9,7 +8,6 @@ public class User {
     // @ID sets primary key
     @Id
     private int id;
-    @Column
     private String username;
     private String email;
     private String password;
@@ -23,6 +21,8 @@ public class User {
         this.password = password;
         this.isManager = isManager;
     }
+    public User(){}
+
 
     public int getId() {
         return id;

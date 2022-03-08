@@ -23,13 +23,11 @@ public class LoginServlet extends HttpServlet {
         // When the input<BUTTON> is pressed it will send us to the
         request.getRequestDispatcher("login.html").include(request,response);
 
-        System.out.println( "Project started..." );
-
         //create a configuration object
         Configuration config = new Configuration();
 
         //read the configuration and load the object
-        config.configure("hibernate.cfg.xml");
+        config.configure("../../hibernate.cfg.xml");
 
         //create the factory
         SessionFactory factory = config.buildSessionFactory();
@@ -54,15 +52,15 @@ public class LoginServlet extends HttpServlet {
             RequestDispatcher requestdispatcher = request.getRequestDispatcher("/login.html");
             requestdispatcher.forward(request,response);
 
-            out.println("You are successfully logged in.");
-            out.println("<br>Welcome " + username);
+            System.out.println("You are successfully logged in.");
+            System.out.println("<br>Welcome " + username);
 
             //using session
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
 
         } else {
-            out.println("Sorry! invalid details.");
+            System.out.println("Sorry! invalid details.");
             RequestDispatcher rd = request.getRequestDispatcher("/login.html");
             rd.include(request, response);
         }
