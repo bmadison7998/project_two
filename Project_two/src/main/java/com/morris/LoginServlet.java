@@ -22,7 +22,20 @@ public class LoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if (username.equals("admin") && password.equals("123")) {
+
+
+
+        SpeedHibernate speedHibernate = new SpeedHibernate();
+        User asdf = speedHibernate.query(username);
+        // inital username is "test", and "password
+        if(asdf == null){
+            // We need to check if its null first so that we don't throw an error
+            // DO NOT DO ANY .GETUSERNAME OR ANYTHING LIKE THAT IT WILL 100% CRASH
+            System.out.println("Sorry! invalid details.");
+            RequestDispatcher rd = request.getRequestDispatcher("/login.html");
+            rd.include(request, response);
+        }
+        if (password.equals(asdf.getPassword())) {
             // debug purposes
             System.out.println("Password Accepted!");
             // used to go to the next page
@@ -33,12 +46,6 @@ public class LoginServlet extends HttpServlet {
             //using session
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
-        } else {
-            SpeedHibernate speedHibernate = new SpeedHibernate();
-            System.out.println(speedHibernate.query(1).getUsername() + " TEST QUERY");
-            System.out.println("Sorry! invalid details.");
-            RequestDispatcher rd = request.getRequestDispatcher("/login.html");
-            rd.include(request, response);
         }
 
         out.close();
