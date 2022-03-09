@@ -10,6 +10,7 @@ html {
   margin: 0px;
   height: 0px;
 }
+
 #header {
   margin: 0px;
   background-color: beige;
@@ -30,7 +31,7 @@ html {
   height: 50px;
   font-size: 100%;
 }
-#logintable {
+.logintable {
   background-color: bisque;
   padding: 10px;
   min-width: 200px;
@@ -40,7 +41,7 @@ html {
   margin-top: 30px;
   border: 1px solid black;
 }
-#logintable div p {
+.logintable div p {
   height: 40px;
   display: block;
   width: 30%;
@@ -48,21 +49,21 @@ html {
   display: inline-block;
   margin-left: 0px;
 }
-#logintable div {
+.logintable div {
   margin: 0px;
   padding: 0px;
   width: 100%;
 }
-#logintable div input {
+.logintable div input {
   width: 65%;
 }
-#loginbutton {
+.loginbutton {
   width: 25%;
   margin: 0px;
   text-align: center;
   display: inline-block;
   height: 30px;
 }
-#loginbutton input {
+.loginbutton input {
   width: 30%;
 }

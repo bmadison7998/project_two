@@ -9,8 +9,7 @@ public class test {
     public static void  main(String[] args){
         System.out.println("START TEST");
         SpeedHibernate speedHibernate = new SpeedHibernate();
-        // speedHibernate.insertintoUser("ben","TERS","EMAIL",false);
-        System.out.println(speedHibernate.query() + " TEST RUN");
+        System.out.println(speedHibernate.query(1) + " TEST RUN");
 
     }
 }

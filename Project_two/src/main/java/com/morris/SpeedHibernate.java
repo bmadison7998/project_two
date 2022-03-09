@@ -1,12 +1,13 @@
 package com.morris;
 
-import jakarta.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class SpeedHibernate {
 
@@ -24,17 +25,9 @@ public class SpeedHibernate {
         session.persist(user);
         //transaction.commit();
     }
-    public List<User> query(){
+    public User query(int id){
         // the "from user" user needs to match the user class
-        org.hibernate.query.Query<User> query = session.createQuery("from User", User.class);
-        return query.list();
-    }
-    public List<User> query(String where){
-        // the "from user" user needs to match the user class
-        String whereat = " ";
-        whereat += where;
-        org.hibernate.query.Query<User> query = session.createQuery("from User" + whereat, User.class);
-        return query.list();
+        return session.get(User.class, id);
     }
     public void close(){
         session.close();
