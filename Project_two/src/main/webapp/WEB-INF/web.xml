@@ -10,4 +10,15 @@
     <url-pattern>/com.morris.LoginServlet</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>com.morris.CreateServlet</servlet-name>
+    <servlet-class>com.morris.CreateServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.CreateServlet</servlet-name>
+    <url-pattern>/com.morris.CreateServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>

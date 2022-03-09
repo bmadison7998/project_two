@@ -1,47 +1,33 @@
-a {
-  text-decoration: underline;
-  color: black;
-}
 body {
   margin: 0px;
-}
-html {
   padding: 0px;
-  margin: 0px;
-  height: 0px;
+}
+p,
+a {
+  color: black;
+}
+html,
+body {
+  min-height: 100%;
 }
 
-#header {
-  margin: 0px;
-  background-color: beige;
-  width: 100%;
-  padding-top: 20px;
-  min-height: 50px;
-  font-size: 175%;
-  text-align: center;
-  font-style: italic;
+html {
+  height: 0px;
+  background-image: linear-gradient(to bottom right, #41be9d, #be4162);
 }
-#links {
-  width: 100%;
-  background-color: antiquewhite;
-  border: 1px solid black;
-  border-left: 0px;
-  border-right: 0px;
-  text-align: center;
-  height: 50px;
-  font-size: 100%;
-}
-.logintable {
-  background-color: bisque;
+
+form {
+  background-color: rgba(255, 255, 255, 0.466);
   padding: 10px;
   min-width: 200px;
   width: 40%;
   border-radius: 15px;
-  margin-left: 25%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 30px;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
 }
-.logintable div p {
+form div p {
   height: 40px;
   display: block;
   width: 30%;
@@ -49,21 +35,26 @@ html {
   display: inline-block;
   margin-left: 0px;
 }
-.logintable div {
+form h2 {
+  text-align: center;
+}
+form div {
   margin: 0px;
   padding: 0px;
+  vertical-align: center;
   width: 100%;
 }
-.logintable div input {
+form div input {
   width: 65%;
 }
-.loginbutton {
-  width: 25%;
+form .button {
   margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   display: inline-block;
   height: 30px;
 }
-.loginbutton input {
-  width: 30%;
+form .button input {
+  width: 20%;
 }

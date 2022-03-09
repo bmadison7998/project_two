@@ -3,45 +3,48 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css\main.css">
+	<link rel="stylesheet" href="css/links.css">
+	<link rel="stylesheet" href="css/extras.css">
+	<link rel="stylesheet" href="css/main.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
 </head>
 
 <body>
-<h2>Login</h2>
+	<!-- HEADER -->
 	<table id="links">
 		<tr>
+			<td id="companyname">
+				<h1>Reimbursement</h1>
+			</td>
 			<td><a href="index.html">Home</a></td>
+			<td>
+				<p>Support</p>
+			</td>
 			<td><a href="login.html">Login</a></td>
+			<td><a href="createuser.html">Create user</a></td>
 		</tr>
 	</table>
-	<form class="logintable" action="com.morris.LoginServlet" method="post">
+
+	<!-- CONTENT -->
+	<form action="com.morris.LoginServlet" method="post">
+		<h2>Login</h2>
 		<div>
 			<p>Username:</p><input type="text" name="username" placeholder="Enter Username">
 		</div>
 		<div>
 			<p>Password:</p><input type="password" name="password" placeholder="Enter Password">
 		</div>
-		<div class="loginbutton">
-			<input type="submit" value="Login">
-		</div>
-	</form>
-	<br>
-	<h2>Create a user</h2>
-	<form class="logintable" action="com.morris.LoginServlet" method="post">
-		<div>
-			<p>Username:</p><input type="text" name="username" placeholder="Enter Username">
-		</div>
-		<div>
-			<p>Password:</p><input type="password" name="password" placeholder="Enter Password">
-		</div>
-		<div class="loginbutton">
+		<div class="button">
 			<input type="submit" value="Login">
 		</div>
 	</form>
 
+	<!-- FOOTER -->
+	<div id="footer">
+		<p>Made by Benjamin Madison</p>
+	</div>
 </body>
 
 </html>

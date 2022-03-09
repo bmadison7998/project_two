@@ -20,31 +20,15 @@ public class CreateServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-
-
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if(username.equals("admin") && password.equals("123")) {
-            // debug purposes
-            System.out.println("Password Accepted!");
-            // used to go to the next page
-            RequestDispatcher requestdispatcher = request.getRequestDispatcher("/user.html");
-            requestdispatcher.forward(request,response);
+        System.out.println("BUTTON PRESSESD");
 
-            System.out.println("You are successfully logged in.");
-            System.out.println("<br>Welcome " + username);
 
-            //using session
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-
-        } else {
-            System.out.println("Sorry! invalid details.");
-            RequestDispatcher rd = request.getRequestDispatcher("/login.html");
-            rd.include(request, response);
-        }
-
+        // Send to this page
+        RequestDispatcher requestdispatcher = request.getRequestDispatcher("/login.html");
+        requestdispatcher.forward(request, response);
         out.close();
     }
 
