@@ -1,11 +1,10 @@
+package com.morris;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-
-// @Entity(name="tablename")
-@Entity(name="user")
+@Entity (name="User")
 public class User {
-    // @ID sets primary key
     @Id
     private int id;
     private String username;
