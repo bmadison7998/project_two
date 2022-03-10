@@ -40,4 +40,24 @@
     <servlet-name>com.morris.logout</servlet-name>
     <url-pattern>/com.morris.logout</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>com.morris.updateuser</servlet-name>
+    <servlet-class>com.morris.updateuser</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.addrequest</servlet-name>
+    <url-pattern>/com.morris.addrequest</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>com.morris.addrequest</servlet-name>
+    <servlet-class>com.morris.addrequest</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.updateuser</servlet-name>
+    <url-pattern>/com.morris.updateuser</url-pattern>
+  </servlet-mapping>
 </web-app>

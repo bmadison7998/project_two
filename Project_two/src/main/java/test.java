@@ -9,8 +9,12 @@ import org.hibernate.cfg.Configuration;
 public class test {
     public static void  main(String[] args){
         System.out.println("START TEST");
-        SpeedHibernate speedHibernate = new SpeedHibernate();
-        System.out.println(speedHibernate.query("User",1) + " TEST RUN");
+        // SETUP SPEED HIBERNATE TO WORK WITH A SPECIFIC TABLE
+        SpeedHibernate speedHibernate = new SpeedHibernate("reimbursement");
+        System.out.println(speedHibernate.queryReimbursementID(1).getAmount() + " TEST RUN");
+
+        SpeedHibernate speedHibernate1 = new SpeedHibernate("User");
+        System.out.println(speedHibernate1.queryUser(1).getUsername() + "USERNAME ");
         CreateServlet createServlet = new CreateServlet();
     }
 }
