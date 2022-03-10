@@ -1,0 +1,17 @@
+#links {
+  background-color: rgba(255, 255, 255, 0.466);;
+  width: 100%;
+  border-left: 0px;
+  border-right: 0px;
+  height: 50px;
+  font-size: 100%;
+}
+#companyname {
+  width: 30%;
+  display: inline-block;
+  height: 100%;
+}
+#companyname h1 {
+  padding-left: 1em;
+  text-align: left;
+}
