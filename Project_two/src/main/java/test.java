@@ -1,4 +1,5 @@
 import com.fasterxml.classmate.AnnotationConfiguration;
+import com.morris.CreateServlet;
 import com.morris.SpeedHibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,6 +11,6 @@ public class test {
         System.out.println("START TEST");
         SpeedHibernate speedHibernate = new SpeedHibernate();
         System.out.println(speedHibernate.query(1) + " TEST RUN");
-
+        CreateServlet createServlet = new CreateServlet();
     }
 }

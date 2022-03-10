@@ -2,6 +2,7 @@ package com.morris;
 
 import jakarta.persistence.Query;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import org.hibernate.Session;
@@ -34,30 +35,18 @@ public class LoginServlet extends HttpServlet {
             // debug purposes
             System.out.println("Password Accepted!");
 
-
-            // Add cookies
-            Cookie cookieUsername = new Cookie("username",user.getUsername());
-            Cookie cookieEmail = new Cookie("email",user.getEmail());
-            boolean temp = user.getManager();
-            String stringtemp = "false";
-            if(temp){stringtemp = "true";}
-            Cookie cookieManager = new Cookie("ismanager",stringtemp);
-            cookieUsername.setMaxAge(0);
-            cookieEmail.setMaxAge(0);
-            cookieManager.setMaxAge(0);
-            response.addCookie(cookieUsername);
-            response.addCookie(cookieManager);
-            response.addCookie(cookieEmail);
-
-
             // used to go to the next page
-            RequestDispatcher requestdispatcher = request.getRequestDispatcher("/user.html");
-            requestdispatcher.forward(request, response);
             System.out.println("You are successfully logged in.");
             System.out.println("<br>Welcome " + username);
-            //using session
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
+            ServletContext servletContext = getServletContext();
+            servletContext.setAttribute("username",username);
+            RequestDispatcher requestdispatcher = request.getRequestDispatcher("/user.html");
+            // runs the userpage servlet
+            request.getRequestDispatcher("com.morris.userpage").include(request, response);
+        }else{
+            System.out.println("LOGIN FAILEED");
+            RequestDispatcher requestdispatcher = request.getRequestDispatcher("/login.html");
+            requestdispatcher.forward(request, response);
         }
 
         out.close();

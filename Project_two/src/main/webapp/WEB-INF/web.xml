@@ -21,4 +21,14 @@
     <url-pattern>/com.morris.CreateServlet</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>com.morris.userpage</servlet-name>
+    <servlet-class>com.morris.userpage</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.userpage</servlet-name>
+    <url-pattern>/com.morris.userpage</url-pattern>
+  </servlet-mapping>
+
 </web-app>
