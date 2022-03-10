@@ -31,4 +31,13 @@
     <url-pattern>/com.morris.userpage</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>com.morris.logout</servlet-name>
+    <servlet-class>com.morris.logout</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.logout</servlet-name>
+    <url-pattern>/com.morris.logout</url-pattern>
+  </servlet-mapping>
 </web-app>

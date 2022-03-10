@@ -10,7 +10,7 @@ public class test {
     public static void  main(String[] args){
         System.out.println("START TEST");
         SpeedHibernate speedHibernate = new SpeedHibernate();
-        System.out.println(speedHibernate.query(1) + " TEST RUN");
+        System.out.println(speedHibernate.query("User",1) + " TEST RUN");
         CreateServlet createServlet = new CreateServlet();
     }
 }

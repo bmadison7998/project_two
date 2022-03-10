@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         SpeedHibernate speedHibernate = new SpeedHibernate();
-        User user = speedHibernate.query(username);
+        User user = speedHibernate.query("User",username);
         // inital username is "test", and "password
         if(user == null){
             // We need to check if its null first so that we don't throw an error
