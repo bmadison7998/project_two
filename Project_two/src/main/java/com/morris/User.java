@@ -55,7 +55,7 @@ public class User {
         this.password = password;
     }
 
-    public boolean isManager() {
+    public boolean getManager() {
         return isManager;
     }
 
