@@ -60,4 +60,14 @@
     <servlet-name>com.morris.updateuser</servlet-name>
     <url-pattern>/com.morris.updateuser</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.login</servlet-name>
+    <url-pattern>/com.morris.login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>com.morris.login</servlet-name>
+    <servlet-class>com.morris.login</servlet-class>
+  </servlet>
 </web-app>

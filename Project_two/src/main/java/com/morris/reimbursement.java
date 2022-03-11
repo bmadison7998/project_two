@@ -34,9 +34,9 @@ public class reimbursement {
         return burseID;
     }
     public void setBurseID(int _burseid){this.burseID = _burseid;}
-    public double getAmount(){return amount;}
+    public double getAmount(){return this.amount;}
     public void setAmount(double _amount){this.amount = _amount;}
-    public boolean getApproved(){return approved;}
+    public boolean getApproved(){return this.approved;}
     public void setApproved(boolean test){this.approved = test;}
 
 }

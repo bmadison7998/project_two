@@ -3,6 +3,8 @@ package com.morris;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
+
+import java.sql.PreparedStatement;
 import java.util.Iterator;
 
 public class SpeedHibernate {
@@ -24,10 +26,18 @@ public class SpeedHibernate {
         user.setUsername(username);
         user.setPassword(password);
         user.setEmail(email);
-        user.setManager(isManager);
-        user.setId(countTableUser() + 1);
+        user.setManager(false);
+        user.setId(countTableUser());
         session.persist(user);
         // transaction.commit();
+    }
+    public void updateUser(int id,String username, String password, String email){
+        String query = "update User set username=? , password=? ,  email=? where id = ?";
+        User user = session.get(User.class, id);
+        user.setUsername(username);
+        user.setEmail((email));
+        session.persist(user);
+        transaction.commit();
     }
 
     public User queryUser(String username) {
@@ -37,6 +47,7 @@ public class SpeedHibernate {
         query.setParameter("username", username);
         // the "from user" user needs to match the user class
         User output = query.uniqueResult();
+        System.out.println("GOT " + output + " FROM USERNAME: " + username + ". SPEEDHIBERNATE");
         nullcheck(output);
         return output;
     }
@@ -53,33 +64,20 @@ public class SpeedHibernate {
 
     public int countTableUser() {
         // RETURNS THE NUMBER OF ROWS IN A SPECIFIC TABLE
-        Query<User> query = session.createQuery("from User", User.class);
-        Iterator<User> count = query.stream().iterator();
-        int counter = 1;
-        for (boolean hasnext = true; hasnext;) {
-            // THIS WILL ITERATE THROUGH EACH ELEMENT IN THE TABLE
-            // AND COUNT THEM
-            try {
-                if (count.hasNext()) {
-                    counter += 1;
-                } else {
-                    hasnext = false;
-                }
-            } catch (Exception e) {
-                hasnext = false;
-            }
-        }
-        return counter;
+        Query query = session.createQuery("SELECT COUNT(e) FROM User e");
+        Iterator output = query.stream().iterator();
+        return output.next().hashCode();
     }
 
     public void insertintoReimbursement(int _userid, double _amount) {
-        reimbursement user = new reimbursement();
-        user.setId(_userid);
-        user.setBurseID(countTableReimbursement() + 1);
-        // WE WANT THE APPROVED VALUE TO BE NULL
-        user.setAmount(_amount);
-        session.persist(user);
-        // transaction.commit();
+        reimbursement burse = new reimbursement();
+        burse.setId(_userid);
+        burse.setBurseID(countTableReimbursement());
+        burse.setApproved(false);
+        burse.setAmount(_amount);
+        System.out.println(burse.getAmount());
+        session.persist(burse);
+        transaction.commit();
     }
 
     public reimbursement queryReimbursementID(int id) {
@@ -113,23 +111,9 @@ public class SpeedHibernate {
 
     public int countTableReimbursement() {
         // RETURNS THE NUMBER OF ROWS IN A SPECIFIC TABLE
-        Query<reimbursement> query = session.createQuery("from reimbursement", reimbursement.class);
-        Iterator<reimbursement> count = query.stream().iterator();
-        int counter = 1;
-        for (boolean hasnext = true; hasnext;) {
-            // THIS WILL ITERATE THROUGH EACH ELEMENT IN THE TABLE
-            // AND COUNT THEM
-            try {
-                if (count.hasNext()) {
-                    counter += 1;
-                } else {
-                    hasnext = false;
-                }
-            } catch (Exception e) {
-                hasnext = false;
-            }
-        }
-        return counter;
+        Query query = session.createQuery("SELECT COUNT(e) FROM reimbursement e");
+        Iterator output = query.stream().iterator();
+        return output.next().hashCode();
     }
 
     void nullcheckburse(reimbursement user) {

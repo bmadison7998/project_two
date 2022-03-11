@@ -34,15 +34,11 @@ public class LoginServlet extends HttpServlet {
         else if (password.equals(user.getPassword())) {
             // debug purposes
             System.out.println("Password Accepted!");
-
+            ServletContext servletContext = request.getServletContext();
+            servletContext.setAttribute("username", username);
             // used to go to the next page
             System.out.println("You are successfully logged in.");
-            System.out.println("<br>Welcome " + username);
-            ServletContext servletContext = getServletContext();
-            servletContext.setAttribute("username",username);
-            RequestDispatcher requestdispatcher = request.getRequestDispatcher("/user.html");
-            // runs the userpage servlet
-            request.getRequestDispatcher("com.morris.userpage").include(request, response);
+            request.getRequestDispatcher("com.morris.login").include(request, response);
         }else{
             System.out.println("LOGIN FAILEED");
             RequestDispatcher requestdispatcher = request.getRequestDispatcher("/login.html");
