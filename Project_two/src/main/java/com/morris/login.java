@@ -15,7 +15,13 @@ public class login extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         // WE USE THE LOGIN SERVLET SO WE CAN RELOAD THE USER PAGE ON REQUEST
-        request.getRequestDispatcher("com.morris.userpage").include(request, response);
-        // runs the userpage servlet
+        ServletContext servletContext = request.getServletContext();
+        if((boolean) servletContext.getAttribute("ismanager")){
+            // LOGIN AS MANAGER
+            request.getRequestDispatcher("com.morris.managerpage").include(request,response);
+        }   else {
+            // LOGIN AS USER
+            request.getRequestDispatcher("com.morris.userpage").include(request, response);
+        }
     }
 }

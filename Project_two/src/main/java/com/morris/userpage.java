@@ -43,15 +43,21 @@ public class userpage extends HttpServlet {
                     boolean test = burse.getApproved();
                     if (test) {
                         allbursements.append("<p>");
-                        System.out.println(burse.getAmount() + " AMOUNT ");
-                        allbursements.append("The amount ").append(burse.getAmount()).append(" ");
+                        allbursements.append("UserID : " + burse.getId() + " with ");
+                        allbursements.append("the reimbursement amount ").append(burse.getAmount()).append(" ");
                         allbursements.append("has been approved!");
+                        allbursements.append("</p>");
+                    } else if(!test) {
+                        allbursements.append("<p>");
+                        allbursements.append("UserID : " + burse.getId() + " with ");
+                        allbursements.append("the reimbursement amount ").append(burse.getAmount()).append(" ");
+                        allbursements.append(" has been denied.");
                         allbursements.append("</p>");
                     } else {
                         allbursements.append("<p>");
-                        allbursements.append("The amount ").append(burse.getAmount()).append(" ");
-                        allbursements.append(" has been denied.");
-                        allbursements.append(" With the burseID: ").append(burse.getBurseID()).append(".");
+                        allbursements.append("UserID : " + burse.getId() + " with ");
+                        allbursements.append("the reimbursement amount ").append(burse.getAmount()).append(" ");
+                        allbursements.append(" has not been seen yet.");
                         allbursements.append("</p>");
                     }
                 }
@@ -129,7 +135,6 @@ public class userpage extends HttpServlet {
                 "        </tr>\n" +
                 "    </table>\n" +
                 "    <br><br><br>";
-        System.out.println(content);
         out.println(content);
     }
 }

@@ -32,6 +32,35 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>com.morris.managerpage</servlet-name>
+    <servlet-class>com.morris.managerpage</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.managerpage</servlet-name>
+    <url-pattern>/com.morris.managerpage</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>com.morris.getspecificuser</servlet-name>
+    <servlet-class>com.morris.getspecificuser</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.getspecificuser</servlet-name>
+    <url-pattern>/com.morris.getspecificuser</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>com.morris.updaterequest</servlet-name>
+    <servlet-class>com.morris.updaterequest</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>com.morris.updaterequest</servlet-name>
+    <url-pattern>/com.morris.updaterequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>com.morris.logout</servlet-name>
     <servlet-class>com.morris.logout</servlet-class>
   </servlet>

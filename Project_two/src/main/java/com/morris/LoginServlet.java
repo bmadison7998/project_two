@@ -36,10 +36,12 @@ public class LoginServlet extends HttpServlet {
             System.out.println("Password Accepted!");
             ServletContext servletContext = request.getServletContext();
             servletContext.setAttribute("username", username);
+            servletContext.setAttribute("ismanager",user.getManager());
             // used to go to the next page
             System.out.println("You are successfully logged in.");
             request.getRequestDispatcher("com.morris.login").include(request, response);
-        }else{
+
+            }else{
             System.out.println("LOGIN FAILEED");
             RequestDispatcher requestdispatcher = request.getRequestDispatcher("/login.html");
             requestdispatcher.forward(request, response);

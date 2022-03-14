@@ -6,8 +6,8 @@ import jakarta.persistence.Id;
 @Entity (name="reimbursement")
 public class reimbursement {
     @Id
-    private int ID;
     private int burseID;
+    private int ID;
     private double amount;
     private boolean approved;
 

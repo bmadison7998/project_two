@@ -7,6 +7,8 @@ import org.hibernate.query.Query;
 import java.sql.PreparedStatement;
 import java.util.Iterator;
 
+import static java.lang.Double.isNaN;
+
 public class SpeedHibernate {
     Configuration config;
     SessionFactory factory;
@@ -32,7 +34,6 @@ public class SpeedHibernate {
         // transaction.commit();
     }
     public void updateUser(int id,String username, String password, String email){
-        String query = "update User set username=? , password=? ,  email=? where id = ?";
         User user = session.get(User.class, id);
         user.setUsername(username);
         user.setEmail((email));
@@ -115,7 +116,17 @@ public class SpeedHibernate {
         Iterator output = query.stream().iterator();
         return output.next().hashCode();
     }
-
+    public void updateReimbursement(int burseID,boolean approved){
+        System.out.println(approved + " NEW BOOLEAN VALUE " + burseID + " BURSE ID");
+        reimbursement burse = session.get(reimbursement.class, burseID);
+        System.out.println(burse.getAmount() + " THE AMOUNT");
+        try {
+            burse.setApproved(approved);
+            session.persist(burse);
+            transaction.commit();
+        }
+        catch (Exception e){}
+        }
     void nullcheckburse(reimbursement user) {
         if (user == null) {
             System.out.println(
