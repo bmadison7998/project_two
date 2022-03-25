@@ -55,7 +55,8 @@ $ git clone https://github.com/bmadison7998/project_two.git
 
 ## Contributors
 
-> Here list the people who have contributed to this project. (ignore this section, if its a solo project)
+> B. Madison
+> C. Morris
 
 ## License
 
