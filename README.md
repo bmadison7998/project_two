@@ -40,24 +40,9 @@ Finance managers are authorized to approve and deny requests for expense reimbur
 ## Getting Started
    
 $ git clone https://github.com/bmadison7998/project_two.git
-- (include all environment setup steps)
-
-> Be sure to include BOTH Windows and Unix command  
-> Be sure to mention if the commands only work on a specific platform (eg. AWS, GCP)
-
-- All the `code` required to get started
-- Images of what it should look like
-
-## Usage
-
-> Here, you instruct other people on how to use your project after they’ve installed it. 
-> This would also be a good place to include screenshots of your project in action.
 
 ## Contributors
 
 > B. Madison
 > C. Morris
 
-## License
-
-This project uses the following license: [<license_name>](<link>).
